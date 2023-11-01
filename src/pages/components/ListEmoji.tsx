@@ -1,8 +1,10 @@
+type handleGetCarProp = string;
+
 type ListEmojiProps = {
   list: string[];
   listObj: Array<{ name: string; icon: string }>;
   objPerson: { name: string; car: string; age: number };
-  handleGetCars: () => void;
+  handleGetCars: (val: handleGetCarProp) => void;
 };
 
 export default function ListEmoji({
@@ -31,7 +33,7 @@ export default function ListEmoji({
       <h2> name :{name}</h2>
       <h2> car :{car}</h2>
       <h2> age :{age}</h2>
-      <button onClick={handleGetCars}>handle get car</button>
+      <button onClick={() => handleGetCars("lambo")}>handle get car</button>
     </div>
   );
 }

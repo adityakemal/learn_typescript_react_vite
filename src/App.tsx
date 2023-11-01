@@ -24,8 +24,8 @@ function App() {
 
   const [TambahMobil, setTambahMobil] = useState(0);
 
-  const handleGetCars = () => {
-    console.log("get car");
+  const handleGetCars = (val: string) => {
+    console.log("get car" + val);
   };
 
   return (
