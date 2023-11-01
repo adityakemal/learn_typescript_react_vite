@@ -6,6 +6,7 @@ import Checkout from "./pages/components/Checkout";
 import Layout from "./pages/shared/Layout";
 import SectionTambahMobil from "./pages/components/SectionTambahMobil";
 import ListEmoji from "./pages/components/ListEmoji";
+import WithZustandStore from "./pages/components/WithZustandStore";
 
 function App() {
   const [count] = useState(110);
@@ -41,6 +42,7 @@ function App() {
         objPerson={objPerson}
         handleGetCars={handleGetCars}
       />
+      <WithZustandStore />
     </Layout>
   );
 }
