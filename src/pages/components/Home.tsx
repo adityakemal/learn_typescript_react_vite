@@ -1,6 +1,3 @@
-import Counter from "./Counter";
-import Layout from "../shared/Layout";
-
 type HomeProps = {
   count: number;
   title: string;
