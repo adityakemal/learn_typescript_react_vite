@@ -1,14 +1,21 @@
 import { useEffect } from "react";
 import { useBearStore, useUserStore } from "../store";
+import { useAuthStore } from "../store/auth.store";
 
 export default function WithZustandStore() {
   const { bears, increase } = useBearStore((state) => state);
 
   const { getUser, userData } = useUserStore((state) => state);
 
+  const { handleLogin, token, handleLogout } = useAuthStore((state) => state);
+
   useEffect(() => {
     getUser("/users");
   }, [getUser]);
+
+  const handleClick = () => {
+    handleLogin(true, "ini adalah token");
+  };
 
   return (
     <div>
@@ -24,6 +31,10 @@ export default function WithZustandStore() {
           {user?.name}- {user.address.geo.lat}
         </p>
       ))}
+      <hr />
+      <h2>token : {token}</h2>
+      <button onClick={handleClick}>Login</button>
+      <button onClick={() => handleLogout()}>logout</button>
     </div>
   );
 }
